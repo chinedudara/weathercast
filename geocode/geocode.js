@@ -22,4 +22,4 @@ let geocodeAddress = (address, callback) => {
       } else {callback('Mogbe! An unknown error has occured.')}
     })} else {callback('No address provided!')}
 }
-module.exports.geocodeAddress = geocodeAddress;
+module.exports = {geocodeAddress};

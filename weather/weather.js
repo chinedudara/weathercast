@@ -24,4 +24,4 @@ let degreeFToC = (degreeF) => {
   return Math.round((degreeF - 32) * 5/9);
 };
 
-module.exports.fetchWeather = fetchWeather;
+module.exports = {fetchWeather};
