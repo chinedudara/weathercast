@@ -12,6 +12,7 @@ let fetchWeather = (lat, lng, callback) => {
       callback(undefined, {
         temperature: degreeFToC(body.currently.temperature) ,
         apparentTemp: degreeFToC(body.currently.apparentTemperature),
+        precipProbability: Math.round(body.currently.precipProbability),
         summary: body.currently.summary
       })
     } else {

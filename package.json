@@ -1,7 +1,7 @@
 {
   "name": "weathercast",
   "version": "1.0.0",
-  "description": "A weather forcast app\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[B\u001b[A\u001b[Bo",
+  "description": "A weather forecast app\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[B\u001b[A\u001b[Bo",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "chalk": "^2.4.2",
-    "request": "^2.88.0",
-    "yargs": "^13.2.1"
+    "express": "^4.16.4",
+    "request": "^2.88.0"
   }
 }
