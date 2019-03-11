@@ -1,8 +1,8 @@
 const request = require('request');
-// const {apiKeys} = require('./../apiKeys');
+const {apiKeys} = require('./../apikeys');
 
 let fetchWeather = (lat, lng, callback) => {
-  const apiKey = 'e2651a350bb84c72283f84d63b3da253';
+  const apiKey = apiKeys.darksky;
   const excludeBlocks = '?exclude=minutely,hourly,daily,alerts,flags'
   request({
     url: `https://api.darksky.net/forecast/${apiKey}/${lat},${lng}${excludeBlocks}`,
