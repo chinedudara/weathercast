@@ -8,10 +8,6 @@ Two APIs were used:
 * Darksky Weather Api
 
 
----App Commands---
+---App Command---
 
-node app -a "Location Address"
-
--a "Address to fetch weather for"
--v app version
--h help
+node app "Address to fetch weather for"
