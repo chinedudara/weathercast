@@ -30,7 +30,8 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Page',
-        name: 'Chinedu Dara'
+        name: 'Chinedu Dara',
+        message: 'My 5th step to NodeAllThings'
     })
 });
 

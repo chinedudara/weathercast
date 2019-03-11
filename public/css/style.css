@@ -47,7 +47,8 @@ header a {
 #addr {
     border: 1px solid #cccccc;
     padding: 8px;
-    width: 80%;
+    width: 70%;
+    border-radius: 10px;
 }
 
 #fetch {
@@ -56,8 +57,24 @@ header a {
     background: #888888;
     color: white;
     padding: 8px;
+    border-radius: 10px;
+    width: 20%;
 }
 
 footer, header {
     text-align: center;
+}
+
+.error {
+ color: rgb(221, 71, 71);
+}
+
+#status {
+    font-size: 12px;
+    font-style: italic;
+    margin: 8px 0;
+}
+
+.processing {
+    
 }
