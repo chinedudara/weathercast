@@ -35,6 +35,11 @@ header a {
     margin-right: 16px;
 }
 
+header p {
+    font-size: 14pt;
+    color: #333333;
+}
+
 .avatarImage {
     width: 250px;
     align-self: center;
@@ -61,12 +66,18 @@ header a {
     width: 20%;
 }
 
+#fetch:active, #fetch:focus {outline: none}
+
 footer, header {
     text-align: center;
 }
 
 .error {
  color: rgb(221, 71, 71);
+}
+
+.success {
+    color: rgb(35, 150, 35);
 }
 
 #status {
@@ -76,5 +87,5 @@ footer, header {
 }
 
 .processing {
-    
+    color: rgb(67, 192, 230)
 }

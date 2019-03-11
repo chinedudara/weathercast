@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Page',
+        title: 'About Me',
         name: 'Chinedu Dara',
         message: 'My 5th step to NodeAllThings'
     })
@@ -37,7 +37,7 @@ app.get('/about', (req, res) => {
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Help Page',
+        title: 'Help',
         message: 'Here\'s the documentation to guide you.',
         name: 'Chinedu Dara'
     })

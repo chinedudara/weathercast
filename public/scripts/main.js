@@ -11,14 +11,18 @@ const summary = document.getElementById('summary');
 let addressData = document.getElementById('addr');
 
 addressForm.addEventListener('submit', (event) => {
+    status.className = '';
     event.preventDefault();
+    status.className = 'processing';
     status.textContent = 'fetching weather data...'
     
 fetch(`/weather?address=${addressData.value}`).then((response) => {
     response.json().then((data) => {
         if (data.error) {
+            status.className = 'error';
             status.textContent = data.error;
         } else {
+            status.className = 'success';
             status.textContent = 'done.'
             temperature.textContent = data.temperature;
             apparentTemp.textContent = data.apparentTemp;
