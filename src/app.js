@@ -31,7 +31,7 @@ app.get('/about', (req, res) => {
     res.render('about', {
         title: 'About Me',
         name: 'Chinedu Dara',
-        message: 'My 5th step to NodeAllThings'
+        message: 'My 5th journey to NodeAllThings'
     })
 });
 
@@ -54,7 +54,7 @@ app.get('/weather', (req, res) => {
         if (error) {
             return res.send({error});
         };
-        weather.fetchWeather(latitude, longitude, (error, {temperature, apparentTemp, summary, precipProbability} = {}) => {
+        weather.fetchWeather(latitude, longitude, (error, {temperature, apparentTemp, precipProbabilityToday, tempTodayHigh, tempTodayHighTime, tempTodayLow, tempTodayLowTime, summaryToday} = {}) => {
             if (error) {
                 return res.send({error})
             }
@@ -62,8 +62,12 @@ app.get('/weather', (req, res) => {
                 address,
                 temperature,
                 apparentTemp,
-                precipProbability,
-                summary
+                precipProbabilityToday,
+                tempTodayHigh,
+                tempTodayHighTime,
+                tempTodayLow,
+                tempTodayLowTime,
+                summaryToday
             })
         })
     })
@@ -83,6 +87,6 @@ app.get('*', (req, res) => {
         message: 'Oops! Page not found.',
         name: 'Chinedu Dara'
     })
-})
+});
 
 app.listen(port, () => {console.log(`Server started on port ${port}`)});    

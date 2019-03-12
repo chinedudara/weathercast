@@ -12,7 +12,16 @@
 <body>
     <div class="main-content">
         {{> header}}
-        <img class="avatarImage" src="./img/avatar.jpg" alt="about avatar">
+        <div class="body-head">
+            <img class="avatarImage" src="./img/avatar.jpg" alt="about avatar">
+            {{!-- <span class="desc-text">Chinedu Dara</span> --}}
+        </div>
+        <p class="body-text">This is a weather app built on NodeJs. Two APIs are being used to obtain the data. 
+            <ul>
+                <li>Google Maps Geocode Api to fetch location coordinates.</li>
+                <li>DarkSky weather Api to fetch realtime weather forecast.</li>
+            </ul> 
+        </p>
     </div>
     {{> footer}}
 </body>

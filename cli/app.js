@@ -12,21 +12,27 @@ if (!address) {
 }
 
 // Used object destructuring to pass in 2nd arguments in the geocodeAddress & fetchWeather callback functions
-geocode.geocodeAddress(address, (errorMessage, {address, longitude, latitude}) => {
+geocode.geocodeAddress(address, (errorMessage, {address, longitude, latitude} = {}) => {
   if (errorMessage) {
-    log(errorMessage);
+    log(chalk.red.inverse('Request Failed!'))
+    log(chalk.red(errorMessage));
   } else {
     log('\n');
-    log(chalk.cyan(address));
-    weather.fetchWeather(latitude, longitude, (errorMessage, {temperature, apparentTemp, precipProbability, summary}) => {
+    log(chalk.cyan.inverse(address));
+    weather.fetchWeather(latitude, longitude, (errorMessage, 
+      {temperature,apparentTemp,precipProbabilityToday,tempTodayHigh,tempTodayHighTime,tempTodayLow,tempTodayLowTime,summaryToday
+    } = {}) => {
       if (errorMessage) {
-        log(errorMessage);
+        log(chalk.red.inverse('Request Failed!'))
+        log(chalk.red(errorMessage));
       } else {
-      log(chalk.green('-----------------------------------------------'));
-        log(`Current temperature na ${chalk.blue(temperature)}°C but e be like ${chalk.red.bold(apparentTemp)}°C.\n I dey ${chalk.magenta(precipProbability)}% sure say rain fit fall today.`);
-        log(chalk.green.inverse('***Make I advice you***'));
-        log(`Weather go dey ${chalk.cyan(summary)}, but e fit change sha. Ji masun!`);
-        log(chalk.green('-----------------------------------------------'));
+      log(chalk.green('---------------------------------------------'));
+      log(chalk`{gray.inverse Current Temperature:} {magenta ${temperature}°C} but feels like {red ${apparentTemp}°C}`);
+      log(chalk`{gray Chances of Rainfall:} {cyan ${precipProbabilityToday}%}`);
+      log(chalk`{gray.inverse Highest Temperature:} {red ${tempTodayHigh}°C} at {yellow ${tempTodayHighTime}}`);
+      log(chalk`{gray Lowest Temperature:} {blue ${tempTodayLow}°C} at {yellow ${tempTodayLowTime}}`);
+      log(chalk`{gray.inverse Weather Summary Today:} {red.inverse ${summaryToday}}`)
+        log(chalk.green('---------------------------------------------'));
       };
     });
   };

@@ -16,14 +16,28 @@
             <input type="submit" value="fetch" id="fetch">
             
             <p id="status"></p>
-            <div class="result">
-                {{!-- <label for="address">Address</label> --}}
-                <p id="address"></p>
-                <p id="temperature"></p>
-                <p id="apparentTemp"></p>
-                <p id="precipProbability"><p>
-                <p id="summary"></p>
-                
+            <div id="result">
+                <p>
+                    <label for="address">Address</label>
+                    <span id="address"></span>
+                </p>
+                <p>
+                    <span id="temperature"></span>°C but feels like 
+                    <span id="apparentTemp"></span>°C
+                </p>
+                <span>
+                    <label for="">Chances of Rainfall: </label><span id="precipProbabilityToday"></span>%
+                </p>
+                <p>
+                    <label for="">Highest Temperature:</label>
+                    <span id="tempTodayHigh"></span>°C at 
+                    <span id="tempTodayHighTime"></span>
+                </p>
+                <p>
+                    <label for="">Lowest Temperature:</label>
+                    <span id="tempTodayLow"></span>°C at <span id="tempTodayLowTime"></span>
+                </p>
+                <p id="summaryToday"></p>
             </div>
         </form>
     </div>
